@@ -1,0 +1,26 @@
+<mat-toolbar>
+  <span>
+      <mat-icon>assignment</mat-icon>
+      Fatec Jales
+  </span>
+</mat-toolbar>
+<form>
+   <div>
+      <mat-form-field class="full-width">
+          <mat-label>Nome: </mat-label>
+          <input [(ngModel)]="category.nameCategory" type="text" matInput name="nameCategory" placeholder="Digite o nome da Categoria" required />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Descrição: </mat-label>
+        <input [(ngModel)]="category.descriptionCategory" type="text" matInput name="descriptionCategory" placeholder="Digite a descrição da categoria" required />
+    </mat-form-field>   
+    <button (click)="saveCategory()" mat-raised-button color="primary">Salvar</button>               
+  </div> 
+  <br />
+    <div role="alert" *ngIf="success == true">
+      <span>Categoria {{ category.nameCategory }} cadastrada com sucesso!</span>
+    </div>
+    <div role="alert" *ngFor="let error of errors">
+      <span>{{ error }}</span>
+    </div> 
+</form>
