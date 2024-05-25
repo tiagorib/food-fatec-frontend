@@ -16,6 +16,10 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MenubarComponent } from './menubar/menubar.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -36,7 +40,11 @@ import { MatMenuModule } from '@angular/material/menu';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTabsModule,
+    MatTableModule,
+    MatCardModule,
+    MatPaginatorModule
   ],
   providers: [
     CategoryService
