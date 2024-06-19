@@ -1,0 +1,55 @@
+<mat-toolbar>
+  <span>
+    <mat-icon>input</mat-icon>
+    Login
+  </span>
+</mat-toolbar>
+<ng-template mat-tab-label>
+  <mat-icon>face</mat-icon>
+  Acesse o sistema utilizando suas credenciais
+</ng-template>
+<div class="formcenter">
+  <mat-card class="full-width">
+    <mat-card-title>Acesso ao Sistema</mat-card-title>
+    <form>
+      <div class="full-width">
+        <mat-form-field class="full-width">
+          <mat-label>Email: </mat-label>
+          <input
+            [(ngModel)]="email"
+            type="email"
+            matInput
+            name="email"
+            placeholder="Digite seu email"
+            required
+          />
+        </mat-form-field>
+      </div>
+      <div class="full-width">
+        <mat-form-field class="full-width">
+          <mat-label>Senha: </mat-label>
+          <input
+            [(ngModel)]="password"
+            type="password"
+            matInput
+            name="password"
+            placeholder="Digite sua senha"
+            required
+          />
+        </mat-form-field>
+        <button (click)="onSubmit()" mat-raised-button color="primary">
+          Acessar
+        </button>
+      </div>
+      <br />
+      <div role="alert" *ngIf="loginError == true">
+        <span>Usuário e/ou Senha inválidos!</span>
+      </div>
+    </form>
+    <hr />
+    <div class="full-width">
+      Não possui cadastro?
+      <a href="#" routerLink="/register"> Cadastre-se </a>
+    </div>
+  </mat-card>
+</div>
